@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // Assuming productId and newPrice are obtained somehow
   updateCart() {
-    CartProvider().updateCart(1, 13);
+    CartProvider().updateCart();
     setState(() {
       // Notify user of the changes you have made on the home page.
       // isChanged = true;

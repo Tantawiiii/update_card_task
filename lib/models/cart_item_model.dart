@@ -33,7 +33,7 @@ class CartProduct extends Product {
     super.image,
     super.price,
     super.minItems,
-    super.availableQuantity,
+     required super.availableQuantity,
     this.selectedQuantity = 0,
     this.totalPrice = 0,
   });

@@ -1,0 +1,49 @@
+
+
+========> Cases in card:-
+
+ 1) Price Product change.
+ 2) Quantity in available or not
+ 3) Product available or not
+ 4) items is selected >= min
+ 5) Total price isChanged
+ 6) Place isActive or not
+ 7) Shipping Price isChanged
+
+
+
+==========> show toast when the case has happened in the card with massage
+
+
+/////////////////////////////////////
+
+  // Any changes in the Price
+  void updateProductPrice(int productId, double newProductPrice) {
+    // 1 - searches for a product in the productsList
+    Product productToUpdate = productsList.firstWhere(
+          (product) => product.id == productId,
+      orElse: () => Product(id: -1), // Return a default Product object if not found
+    );
+
+    // 2- check if the product is available or not
+    if (productToUpdate.id != -1 && productToUpdate.availableQuantity! > 0) {
+      // Update the product's price
+      productToUpdate.price = newProductPrice;
+
+      // 3- Update the price in the cart items
+      localCartItems.forEach((cartItem) {
+        cartItem.products.forEach((cartProduct) {
+          if (cartProduct.id == productId) {
+            cartProduct.price = newProductPrice;
+            cartProduct.totalPrice = newProductPrice * cartProduct.selectedQuantity;
+          }
+        });
+      });
+
+      print('Product price updated successfully for product ID: $productId');
+     // 4- print items after update
+      _printItemsAfterUpdate(localCartItems);
+    } else {
+      print('Product not found or not available.');
+    }
+  }

@@ -5,7 +5,7 @@ class Product {
   String? image;
   num? price;
   int? minItems;
-  int? availableQuantity;
+  int availableQuantity;
 
   Product({
     this.id,
@@ -14,6 +14,6 @@ class Product {
     this.price,
     this.minItems,
     this.description,
-    this.availableQuantity,
+    required this.availableQuantity,
   });
 }

@@ -9,10 +9,10 @@ final localCartITems = [
       id: 1,
       place: Place(
         id: 1,
-        isActive: true,
+        isActive: false,
         title: 'El-Haram Mosque',
         placeImage: 'assets/images/mosque-1.jpg',
-        shippingPrice: 20,
+        shippingPrice: 30,
       ),
       products: [
         CartProduct(
@@ -21,7 +21,7 @@ final localCartITems = [
           description: 'This is a water bottle',
           price: 10,
           image: 'assets/images/product-1.jpg',
-          availableQuantity: 30,
+          availableQuantity: 3,
           minItems: 5,
           selectedQuantity: 5,
           totalPrice: 50,
@@ -88,7 +88,7 @@ final localCartITems = [
       id: 3,
       place: Place(
         id: 3,
-        isActive: true,
+        isActive: false,
         title: 'El-Sultan Hassan Mosque',
         placeImage: 'assets/images/mosque-3.jpg',
         shippingPrice: 40,
@@ -98,7 +98,7 @@ final localCartITems = [
           id: 1,
           title: 'Water Bottle',
           description: 'This is a water bottle',
-          price: 10,
+          price: 50,
           image: 'assets/images/product-1.jpg',
           availableQuantity: 30,
           minItems: 5,
